@@ -423,6 +423,16 @@
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_ADC.h</FilePath>
             </File>
+            <File>
+              <FileName>Driver_Plateau.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Plateau.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Voiles.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Voiles.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -849,6 +859,16 @@
               <FileName>Driver_ADC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_ADC.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Plateau.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Plateau.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Voiles.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Voiles.h</FilePath>
             </File>
           </Files>
         </Group>
