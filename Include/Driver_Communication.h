@@ -2,14 +2,20 @@
 #define COM_H
 
 #include "stm32f10x.h"
+#include "driver_Timer.h"
+
+//Configure l'UART
+void Config_UART(USART_TypeDef * UART_Par);
+
 //Configure l'envoi de message
-void InitMessageSending(int delay);
-void InitMessageReceiving();
-void SendMessage(char * message[], int size);
-//à mettre dans le .c
-void CallbackMessageReceiving();
-void CallBackMessageSending();
-void SendChar(char character);
+void Init_Message_Sending(int delay);
+
+//Configuerer la réception de messages
+//void Init_Message_Receiving();
+
+//Envoi de messages
+void Send_Message(const char * message[]);
+
 
 
 #endif
