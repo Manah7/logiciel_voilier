@@ -2,6 +2,7 @@
 #define PLATEAU_H
 
 #include "stm32f10x.h"
+#include "Driver_Timer.h"
 
 /*
 Driver pour la rotation du plateau
@@ -19,16 +20,19 @@ enum sens {
 	ANTI_HORAIRE
 };
 
-/* Défini le sens de rotation */
+/* [[deprecated]] Initialise le module plateau */
+void Init_Plateau();
+
+/* [[deprecated]] Défini le sens de rotation */
 void Set_Rotation_Direction(enum sens s);
 
-/* Défini la vitesse de rotation, de 0 à 255 */
+/* [[deprecated]] Défini la vitesse de rotation, de 0 à 255 */
 void Set_Rotation_Speed(short speed);
 
-/* Commence la rotation */
+/* [[deprecated]] Commence la rotation */
 void Start_Rotation();
 
-/* Arrête la rotation */
+/* [[deprecated]] Arrête la rotation */
 void Stop_Rotation();
 
 #endif 
