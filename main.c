@@ -107,13 +107,13 @@ void test_adc(){
 
 void test_voiles(){
 	int n = 0;
-	int i = CLOCK;
+	int i = CLOCK/2;
 	Init_Voiles();
 	
 	Regler_Voiles(n);
 	do {
 		while(i --> 0){}
-		i = CLOCK;
+		i = CLOCK/2;
 		n = (n+1) % 6;
 		Regler_Voiles(n);
 		

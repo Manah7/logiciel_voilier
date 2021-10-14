@@ -17,7 +17,11 @@ void Setup_Callback (void (* ptrFonction) (void), TIM_TypeDef * Timer);
 
 void MyTimer_PWM(TIM_TypeDef * Timer , char Channel);
 
+/* Regle le pourcentage de la PWM */
 void Set_pwm_percentage(TIM_TypeDef * Timer, int pctg, char Channel);
+
+/* [[deprecated]] Version plus précise de Set_pwm_percentage, prenant un entier entre 0 et 10000 */
+void Set_pwm_percentage_precise(TIM_TypeDef * Timer, int pdml, char Channel);
 
 #define MyTimer_Base_Start(Timer) (Timer->CR1 |= ( 1 << 0))
 #define MyTimer_Base_Stop(Timer) (Timer->CR1 &= ~( 1 << 0))

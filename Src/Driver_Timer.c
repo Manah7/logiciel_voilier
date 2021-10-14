@@ -232,5 +232,24 @@ void Set_pwm_percentage(TIM_TypeDef * Timer, int pctg, char Channel){
 	}
 }
 
+/* [[deprecated]] */
+void Set_pwm_percentage_precise(TIM_TypeDef * Timer, int pdml, char Channel){
+	short cycle = Timer->ARR * pdml / 10000;
+	switch (Channel) {
+		case (char) 1:
+			Timer->CCR1 = cycle;
+			break;
+		case (char) 2:
+			Timer->CCR2 = cycle;
+			break;
+		case (char) 3:
+			Timer->CCR3 = cycle;
+			break;
+		case (char) 4:
+			Timer->CCR4 = cycle;
+			break;
+	}
+}
+
 
 

@@ -10,7 +10,7 @@ Fonction interne. Ajuste un short pour correspondre à
 une valeur entre 5 et 10 % (entre 1 et 2 ms, cycle 20ms).
 */ 
 int Convert_to_Pc(short v) {
-	return (int) v + 5;
+	return ((int) v + 5) * 100;
 }
 
 /*
@@ -41,12 +41,12 @@ void Init_Voiles(void) {
 	MyTimer_Base_Start(timerVoiles.Timer);
 	
 	MyTimer_PWM(timerVoiles.Timer, CHANNEL);
-	Set_pwm_percentage(timerVoiles.Timer, Convert_to_Pc(0), CHANNEL);
+	Set_pwm_percentage_precise(timerVoiles.Timer, Convert_to_Pc(0), CHANNEL);
 }
 
 /*
 	Regle la PWM entre 5% (1ms) et 10% (2ms)
 */
 void Regler_Voiles(short r) {
-	Set_pwm_percentage(timerVoiles.Timer, Convert_to_Pc(r), CHANNEL);
+	Set_pwm_percentage_precise(timerVoiles.Timer, Convert_to_Pc(r), CHANNEL);
 }
