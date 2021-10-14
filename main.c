@@ -1,6 +1,7 @@
 #include "Driver_GPIO.h"
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
+#include "Driver_Voiles.h"
 
 void test_gpio () {
 	MyGPIO_Struct_TypeDef button;
@@ -102,11 +103,20 @@ void test_adc(){
 	} while (1);
 }
 
+void test_voiles(){
+	Init_Voiles();
+	Regler_Voiles(3);
+	
+	do {} while (1);
+}
+
 int main () {	
   RCC->APB2ENR |=(0x01 << 2)|(0x01 << 3)|(0x01 << 4);
 	
 	//test_gpio();
 	//test_timer();
 	//test_pwm();
-	test_adc();
+	//test_adc();
+	
+	test_voiles();
 }
