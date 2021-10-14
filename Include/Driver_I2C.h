@@ -11,6 +11,4 @@ void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress1, uint32_t AddressingMode
 
 void I2C_Adress();
 
-
-
 #endif

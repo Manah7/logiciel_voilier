@@ -433,6 +433,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_RTC.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_I2C.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -482,6 +487,11 @@
               <FileName>Driver_RTC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_RTC.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_I2C.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -920,6 +930,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_RTC.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_I2C.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -969,6 +984,11 @@
               <FileName>Driver_RTC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_RTC.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_I2C.h</FilePath>
             </File>
           </Files>
         </Group>
