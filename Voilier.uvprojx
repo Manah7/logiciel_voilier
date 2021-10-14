@@ -403,6 +403,36 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_ADC.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_Plateau.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Plateau.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Voiles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Voiles.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_IMU.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_IMU.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_RTC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -432,6 +462,26 @@
               <FileName>Driver_Voiles.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_Voiles.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Communication.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Communication.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_IMU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_IMU.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_RTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_RTC.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -840,6 +890,36 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_ADC.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_Plateau.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Plateau.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Voiles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Voiles.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Communication.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Communication.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_IMU.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_IMU.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_RTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_RTC.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -869,6 +949,26 @@
               <FileName>Driver_Voiles.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_Voiles.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Communication.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Communication.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Girouette.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Girouette.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_IMU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_IMU.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_RTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_RTC.h</FilePath>
             </File>
           </Files>
         </Group>
