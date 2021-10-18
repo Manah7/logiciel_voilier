@@ -18,8 +18,11 @@
 	interruption pour mise à zero de l'angle lorsque signal de I reçu ?
 */
 
-/* Initialisation de la girouette et des pins correspondant aux entrées A, B et I */
-void Init_Girouette(MyTimer_Struct_TypeDef * myTimer);
+MyTimer_Struct_TypeDef * myTimerGirouette;
+
+/* Initialisation de la girouette et de l'interruption liée à la détection du zéro,
+les entrées A et B dépendent du Timer passé en paramètre, la pin correspond à I (zero)*/
+void Init_Girouette(MyTimer_Struct_TypeDef * myTimer, char GPIO_pin);
 
 /* Lancement du timer et de la prise des mesures */
 void Start_Mesure_Girouette(MyTimer_Struct_TypeDef * myTimer);
@@ -29,5 +32,8 @@ void Stop_Mesure_Girouette(MyTimer_Struct_TypeDef * myTimer);
 
 /* Retourne la valeur de l'angle de la girouette */
 int Get_Angle(MyTimer_Struct_TypeDef * myTimer);
+
+/* handler d'interruption de remise à zéro */
+void EXTI2_IRQHandler(void);
 
 #endif
