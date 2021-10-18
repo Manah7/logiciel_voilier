@@ -11,8 +11,8 @@ typedef struct{
     int second;
 } time;
 
-void RTC_init();
+void RTC_init(void);
 
-time RTC_gettime ();
+time RTC_gettime (void);
 
 #endif
