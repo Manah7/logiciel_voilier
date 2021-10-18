@@ -6,6 +6,9 @@ MyTimer_Struct_TypeDef timerPlateau;
 MyGPIO_Struct_TypeDef pa7;
 MyGPIO_Struct_TypeDef pa8;
 
+enum sens s; /* HORAIRE ou ANTI_HORAIRE */
+short speed; /* 0 à 100 */
+
 /*
 Initialisation du timer pour la PWM du module
 plateau. Les parametres de la PWN sont les suivants :
@@ -25,6 +28,15 @@ Application des valeurs :
 	ARR = 225
 	PSC = 16
 */
+
+void Set_Rotation_Direction(enum sens csens) {
+	s = csens;
+}
+
+void Set_Rotation_Speed(short cspeed) {
+	speed = cspeed;
+}
+
 void Init_Plateau(void) {
 	// Initialisation de la PWM
 	timerPlateau.Timer = TIM1;
@@ -34,11 +46,20 @@ void Init_Plateau(void) {
 	MyTimer_Base_Init(&timerPlateau);
 	MyTimer_Base_Start(timerPlateau.Timer);
 	
+	Set_Rotation_Direction(HORAIRE);
+	
 	MyTimer_PWM(timerPlateau.Timer, CHANNEL);
 	Set_pwm_percentage(timerPlateau.Timer, 0, CHANNEL);
 	
 	// Initialisation du GPIO
-	pa8.GPIO = GPIOC;
-	pa8.GPIO_Conf = Out_Ppull;
-	pa8.GPIO_Pin = 10;
+	pa7.GPIO = GPIOA;
+	pa7.GPIO_Conf = Out_Ppull;
+	pa7.GPIO_Pin = 7;
+	MyGPIO_Init(&pa7);
+	
 }
+
+void Start_Rotation(void) {
+	Set_pwm_percentage(timerPlateau.Timer, speed, CHANNEL);
+}
+
