@@ -3,6 +3,7 @@
 #include "Driver_ADC.h"
 #include "Driver_Voiles.h"
 #include "Driver_Girouette.h"
+#include "Driver_Plateau.h"
 
 #define CLOCK 72000000
 
@@ -123,6 +124,37 @@ void test_voiles(){
 	} while (1);
 }
 
+void wait() {
+	int i = CLOCK/2;
+	while(i --> 0){}
+}
+
+void test_plateau() {
+	Init_Plateau();
+	
+	do {
+		Set_Rotation_Direction(HORAIRE);
+		Set_Rotation_Speed(20);
+		Start_Rotation();
+		
+		wait();
+		
+		Stop_Rotation();
+		
+		wait();
+		
+		Set_Rotation_Direction(ANTI_HORAIRE);
+		Set_Rotation_Speed(10);
+		Start_Rotation();
+		
+		wait();
+		
+		Stop_Rotation();
+		
+		wait();
+	} while (1);
+}
+
 void test_girouette()
 {
 	int mesure;
@@ -141,8 +173,8 @@ int main () {
 	//test_timer();
 	//test_pwm();
 	//test_adc();
-	
-	test_voiles();
-	
+	//test_voiles();
 	//test_girouette();
+
+	test_plateau();
 }
