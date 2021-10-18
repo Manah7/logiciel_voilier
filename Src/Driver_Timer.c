@@ -4,7 +4,8 @@
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) {
 	switch ((int)Timer->Timer){
 		case (int)TIM1 :
-			RCC->APB1ENR |= RCC_APB2ENR_TIM1EN ;
+			RCC->APB2ENR |= RCC_APB2ENR_TIM1EN ;
+			Timer->Timer->BDTR |= TIM_BDTR_MOE ;
       break;
     case (int)TIM2 :
 			RCC->APB1ENR |= RCC_APB1ENR_TIM2EN ;
@@ -232,7 +233,7 @@ void Set_pwm_percentage(TIM_TypeDef * Timer, int pctg, char Channel){
 	}
 }
 
-/* [[deprecated]] */
+
 void Set_pwm_percentage_precise(TIM_TypeDef * Timer, int pdml, char Channel){
 	short cycle = Timer->ARR * pdml / 10000;
 	switch (Channel) {

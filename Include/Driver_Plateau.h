@@ -21,19 +21,19 @@ enum sens {
 	ANTI_HORAIRE
 };
 
-/* [[deprecated]] Initialise le module plateau */
+/* Initialise le module plateau */
 void Init_Plateau(void);
 
-/* [[deprecated]] Défini le sens de rotation */
+/* Défini le sens de rotation */
 void Set_Rotation_Direction(enum sens csens);
 
-/* [[deprecated]] Défini la vitesse de rotation, de 0 à 100 */
+/* Défini la vitesse de rotation, de 0 à 100 */
 void Set_Rotation_Speed(short cspeed);
 
-/* [[deprecated]] Commence la rotation */
+/* Commence la rotation */
 void Start_Rotation(void);
 
-/* [[deprecated]] Arrête la rotation */
+/* Arrête la rotation */
 void Stop_Rotation(void);
 
-#endif 
+#endif

@@ -31,6 +31,15 @@ Application des valeurs :
 
 void Set_Rotation_Direction(enum sens csens) {
 	s = csens;
+	
+	switch (s) {
+	case (char) HORAIRE:
+		MyGPIO_Set(pa7.GPIO, pa7.GPIO_Pin);
+		break;
+	case (char) ANTI_HORAIRE:
+		MyGPIO_Reset(pa7.GPIO, pa7.GPIO_Pin);
+		break;
+	}
 }
 
 void Set_Rotation_Speed(short cspeed) {
@@ -46,8 +55,6 @@ void Init_Plateau(void) {
 	MyTimer_Base_Init(&timerPlateau);
 	MyTimer_Base_Start(timerPlateau.Timer);
 	
-	Set_Rotation_Direction(HORAIRE);
-	
 	MyTimer_PWM(timerPlateau.Timer, CHANNEL);
 	Set_pwm_percentage(timerPlateau.Timer, 0, CHANNEL);
 	
@@ -57,9 +64,14 @@ void Init_Plateau(void) {
 	pa7.GPIO_Pin = 7;
 	MyGPIO_Init(&pa7);
 	
+	Set_Rotation_Direction(HORAIRE);
 }
 
 void Start_Rotation(void) {
 	Set_pwm_percentage(timerPlateau.Timer, speed, CHANNEL);
+}
+
+void Stop_Rotation(void) {
+	Set_pwm_percentage(timerPlateau.Timer, 0, CHANNEL);
 }
 
