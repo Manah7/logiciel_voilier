@@ -49,8 +49,8 @@ void Init_Message_Receiving(void (* ptrFonction) (char)){
 	//On lance la réception en mettant le bit RE de CR1 à 1: 
 	UART->CR1 |= (0x1 <<2);
 	
-	//On active les interruption à la reception en mettant le bit TCIE de CR1 à 1 
-	UART->CR1 |= (0x1<<6);
+	//On active les interruption à la reception en mettant le bit RXNEIE de CR1 à 1 
+	UART->CR1 |= (0x1<<5);
 	
 }
 
