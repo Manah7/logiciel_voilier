@@ -10,7 +10,7 @@ Fonction interne. Ajuste un short pour correspondre à
 une valeur entre 5 et 10 % (entre 1 et 2 ms, cycle 20ms).
 */ 
 int Convert_to_Pc(short v) {
-	return ((int) v + 5) * 100;
+	return ((v * 100 / 4) + 500);
 }
 
 /*
@@ -29,13 +29,14 @@ avec :
 	0 < prescaler < 65535
 	
 Application des valeurs :
-	ARR = 1381
-	PSC = 1042
+	ARR = 22500
+	PSC = 64
+On cherche aussi à maximiser ARR pour améliorer la résolution.
 */
 void Init_Voiles(void) {
 	timerVoiles.Timer = TIM3;
-	timerVoiles.ARR = 1381;
-	timerVoiles.PSC = 1042;
+	timerVoiles.ARR = 22500;
+	timerVoiles.PSC = 64;
 	
 	MyTimer_Base_Init(&timerVoiles);
 	MyTimer_Base_Start(timerVoiles.Timer);

@@ -9,7 +9,7 @@
 /*
 Driver pour le réglage des voiles
 	PINs utilisés :
-		- PA6
+		- PA6 (D12)
 		Timer utilisé :
 		- TIM3, channel 1 (correspond à PA6)
 */
@@ -17,7 +17,7 @@ Driver pour le réglage des voiles
 /* Initialise le module voiles. Regle les voiles en position 0. */
 void Init_Voiles(void);
 
-/* Réglage des voiles, de 0 à 5 (inclus), 5 étant le plus bordé */
+/* Réglage des voiles, de 0 à 20 (inclus), 20 étant le plus bordé */
 void Regler_Voiles(short r);
 
 #endif 
