@@ -3,6 +3,7 @@
 
 #include "stm32f10x.h"
 #include "Driver_Timer.h"
+#include "Driver_GPIO.h"
 #include <stdlib.h>
 
 /*
@@ -11,7 +12,7 @@
 		- 2 PINs sur un Timer (pour A et B)
 			- TIM2_CH1 : PA0 (A)
 			- TIM2_CH2 : PA1 (B)
-		- 1 PIN quelconque (pour I, le zero)
+		- 1 PIN quelconque (pour I, le zero) ici PA2
 */
 
 /* Initialisation de la girouette et de l'interruption liée à la détection du zéro */
