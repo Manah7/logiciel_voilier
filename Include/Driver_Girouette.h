@@ -14,22 +14,17 @@
 		- 1 PIN quelconque (pour I, le zero)
 */
 
-/* TO DO
-	interruption pour mise à zero de l'angle lorsque signal de I reçu ?
-*/
-
-/* Initialisation de la girouette et de l'interruption liée à la détection du zéro,
-les entrées A et B dépendent du Timer passé en paramètre, la pin correspond à I (zero)*/
-void Init_Girouette();
+/* Initialisation de la girouette et de l'interruption liée à la détection du zéro */
+void Init_Girouette(void);
 
 /* Lancement du timer et de la prise des mesures */
-void Start_Mesure_Girouette();
+void Start_Mesure_Girouette(void);
 
 /* Arrêt du timer et de la prise de mesures */
-void Stop_Mesure_Girouette();
+void Stop_Mesure_Girouette(void);
 
 /* Retourne la valeur de l'angle de la girouette */
-int Get_Angle();
+int Get_Angle(void);
 
 /* handler d'interruption de remise à zéro */
 void EXTI2_IRQHandler(void);

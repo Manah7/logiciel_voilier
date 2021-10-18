@@ -2,13 +2,15 @@
 
 MyTimer_Struct_TypeDef * myTimerGirouette;
 
-void Init_Girouette()
+void Init_Girouette(void)
 {
+	// configuration du timer
 	myTimerGirouette = malloc(sizeof(MyTimer_Struct_TypeDef));
 	myTimerGirouette->Timer = TIM2; // On utilise le Timer 2
 	myTimerGirouette->ARR = 359;
 	myTimerGirouette->PSC = TIM_PSC_PSC; // valeur par défaut du prescaler (à verifier)
 	
+	// initialisation du timer
 	MyTimer_Base_Init(myTimerGirouette);
 	
 	// on selectionne les deux entrees
@@ -54,20 +56,21 @@ void Init_Girouette()
 	NVIC_EnableIRQ(EXTI2_IRQn);
 }
 
-void Start_Mesure_Girouette()
+void Start_Mesure_Girouette(void)
 {
 	// activation du compteur
 	myTimerGirouette->Timer->CR1 |= TIM_CR1_CEN;
 	MyTimer_Base_Start(myTimerGirouette->Timer);
 }
 
-void Stop_Mesure_Girouette()
+void Stop_Mesure_Girouette(void)
 {
+	// désactivation du compteur
 	myTimerGirouette->Timer->CR1 &= (~TIM_CR1_CEN);
 	MyTimer_Base_Stop(myTimerGirouette->Timer);
 }
 
-int Get_Angle()
+int Get_Angle(void)
 {
 	return (int) myTimerGirouette->Timer->CNT;
 }
