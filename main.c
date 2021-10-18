@@ -2,6 +2,7 @@
 #include "Driver_Timer.h"
 #include "Driver_ADC.h"
 #include "Driver_Voiles.h"
+#include "Driver_Girouette.h"
 
 #define CLOCK 72000000
 
@@ -122,6 +123,17 @@ void test_voiles(){
 	} while (1);
 }
 
+void test_girouette()
+{
+	int mesure;
+	Init_Girouette();
+	Start_Mesure_Girouette();
+	while(1)
+	{
+		mesure = Get_Angle();
+	}
+}
+
 int main () {	
   RCC->APB2ENR |=(0x01 << 2)|(0x01 << 3)|(0x01 << 4);
 	
@@ -131,4 +143,6 @@ int main () {
 	//test_adc();
 	
 	test_voiles();
+	
+	//test_girouette();
 }
