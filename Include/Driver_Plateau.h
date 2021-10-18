@@ -24,10 +24,10 @@ enum sens {
 /* Initialise le module plateau */
 void Init_Plateau(void);
 
-/* Défini le sens de rotation */
+/* [[DEPRECATED]] Défini le sens de rotation */
 void Set_Rotation_Direction(enum sens csens);
 
-/* Défini la vitesse de rotation, de 0 à 100 */
+/* Défini la vitesse de rotation, de -100 à 100 */
 void Set_Rotation_Speed(short cspeed);
 
 /* Commence la rotation */

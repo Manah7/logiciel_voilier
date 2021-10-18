@@ -34,16 +34,22 @@ void Set_Rotation_Direction(enum sens csens) {
 	
 	switch (s) {
 	case (char) HORAIRE:
-		MyGPIO_Set(pa7.GPIO, pa7.GPIO_Pin);
+		MyGPIO_Reset(pa7.GPIO, pa7.GPIO_Pin);
 		break;
 	case (char) ANTI_HORAIRE:
-		MyGPIO_Reset(pa7.GPIO, pa7.GPIO_Pin);
+		MyGPIO_Set(pa7.GPIO, pa7.GPIO_Pin);
 		break;
 	}
 }
 
 void Set_Rotation_Speed(short cspeed) {
-	speed = cspeed;
+	if (cspeed > 0) {
+		Set_Rotation_Direction(HORAIRE);
+		speed = cspeed;
+	} else {
+		Set_Rotation_Direction(ANTI_HORAIRE);
+		speed = 0-cspeed;
+	}
 }
 
 void Init_Plateau(void) {

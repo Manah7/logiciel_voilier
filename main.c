@@ -4,6 +4,7 @@
 #include "Driver_Voiles.h"
 #include "Driver_Girouette.h"
 #include "Driver_Plateau.h"
+#include "Driver_Communication.h"
 
 #define CLOCK 72000000
 
@@ -131,21 +132,23 @@ void wait() {
 
 void test_plateau() {
 	Init_Plateau();
+	Init_Voiles();
 	
 	do {
-		Set_Rotation_Direction(HORAIRE);
-		Set_Rotation_Speed(20);
+		Set_Rotation_Speed(60);
 		Start_Rotation();
+		Regler_Voiles(0);
 		
 		wait();
 		
 		Stop_Rotation();
+		Regler_Voiles(10);
 		
 		wait();
 		
-		Set_Rotation_Direction(ANTI_HORAIRE);
-		Set_Rotation_Speed(10);
+		Set_Rotation_Speed(-30);
 		Start_Rotation();
+		Regler_Voiles(20);
 		
 		wait();
 		
@@ -166,8 +169,21 @@ void test_girouette()
 	}
 }
 
+void reception(char par){
+	Set_Rotation_Speed((int) par);
+	Start_Rotation();
+}
+
 int main () {	
   RCC->APB2ENR |=(0x01 << 2)|(0x01 << 3)|(0x01 << 4);
+	
+	Init_Plateau();
+	Init_Voiles();
+	
+	Regler_Voiles(20);
+	
+	Config_UART(USART3);
+	Init_Message_Receiving(&reception);
 	
 	//test_gpio();
 	//test_timer();
@@ -175,6 +191,5 @@ int main () {
 	//test_adc();
 	//test_voiles();
 	//test_girouette();
-
-	test_plateau();
+	//test_plateau();
 }
