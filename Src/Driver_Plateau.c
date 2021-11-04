@@ -43,12 +43,12 @@ void Set_Rotation_Direction(enum sens csens) {
 }
 
 void Set_Rotation_Speed(short cspeed) {
-	if (cspeed > 0) {
-		Set_Rotation_Direction(HORAIRE);
-		speed = cspeed;
-	} else {
+	if (cspeed > 128) {
 		Set_Rotation_Direction(ANTI_HORAIRE);
-		speed = 0-cspeed;
+		speed = (256 - cspeed)*100/128;
+	} else {
+		Set_Rotation_Direction(HORAIRE);
+		speed = cspeed*100/128;
 	}
 }
 
