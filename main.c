@@ -126,7 +126,7 @@ void test_voiles(){
 }
 
 void wait() {
-	int i = CLOCK/2;
+	int i = CLOCK/4;
 	while(i --> 0){}
 }
 
@@ -170,6 +170,7 @@ void test_girouette()
 }
 
 void reception(char par){
+	Send_Message("[REGLAGE]\n");
 	Set_Rotation_Speed((int) par);
 	Start_Rotation();
 }
@@ -180,11 +181,33 @@ int main () {
 	Init_Plateau();
 	Init_Voiles();
 	
-	Regler_Voiles(20);
+	Regler_Voiles(10);
+	wait();
+	Regler_Voiles(18);
 	
 	Config_UART(USART3);
-	Send_Message("DEBUG");
 	Init_Message_Receiving(&reception);
+	
+	/*do {
+		Send_Message("[DEBUG]\n");
+		Regler_Voiles(0);
+		wait();
+		Send_Message("[REGLAGE]\n");
+		Regler_Voiles(10);
+		wait();
+		Send_Message("[REGLAGE]\n");
+		Regler_Voiles(20);
+		wait();
+	} while (1);*/
+	
+	
+	while (1) {
+		Send_Message("[DEBUG]\n");
+		wait();
+		Regler_Voiles(0);
+		wait();
+		Regler_Voiles(18);
+	}
 	
 	//test_gpio();
 	//test_timer();
