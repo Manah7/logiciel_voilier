@@ -183,6 +183,7 @@ int main () {
 	Regler_Voiles(20);
 	
 	Config_UART(USART3);
+	Send_Message("DEBUG");
 	Init_Message_Receiving(&reception);
 	
 	//test_gpio();

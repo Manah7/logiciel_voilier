@@ -2,6 +2,10 @@
 
 void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress) {
 	
+	// Déclaration GPIO
+	MyGPIO_Struct_TypeDef GPIO_SCL;
+	MyGPIO_Struct_TypeDef GPIO_SDA;
+	
 	// Reset des registres I2C
 	RCC->APB1RSTR |=  RCC_APB1RSTR_I2C1RST;
 	RCC->APB1RSTR &= ~RCC_APB1RSTR_I2C1RST;
@@ -9,8 +13,6 @@ void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress) {
 	I2C1->CR1 &= ~I2C_CR1_SWRST; 
 	
 	// Initialisation des GPIO
-	MyGPIO_Struct_TypeDef GPIO_SCL;
-	MyGPIO_Struct_TypeDef GPIO_SDA;
 	GPIO_SCL.GPIO = GPIOB;
 	GPIO_SCL.GPIO_Pin = 6;
 	GPIO_SCL.GPIO_Conf = AltOut_Ppull;
