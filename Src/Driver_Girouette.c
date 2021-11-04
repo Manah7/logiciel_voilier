@@ -20,7 +20,7 @@ void Init_Girouette(void)
 	// initialisation des GPIOs
 	gpio_0.GPIO_Conf = In_PullUp;
 	gpio_1.GPIO_Conf = In_PullUp;
-	gpio_2.GPIO_Conf = AltOut_Ppull;
+	gpio_2.GPIO_Conf = In_PullUp;
 	gpio_0.GPIO = GPIOA;
 	gpio_1.GPIO = GPIOA;
 	gpio_2.GPIO = GPIOA;
@@ -30,7 +30,7 @@ void Init_Girouette(void)
 	
 	MyGPIO_Init(&gpio_0);
 	MyGPIO_Init(&gpio_1);
-	//MyGPIO_Init(&gpio_2);
+	MyGPIO_Init(&gpio_2);
 	
 	// on selectionne les deux entrees
 	// entrée 1
@@ -80,7 +80,7 @@ void Start_Mesure_Girouette(void)
 	// activation du compteur
 	myTimerGirouette->Timer->CR1 |= TIM_CR1_CEN;
 	MyTimer_Base_Start(myTimerGirouette->Timer);
-}
+}	
 
 void Stop_Mesure_Girouette(void)
 {
