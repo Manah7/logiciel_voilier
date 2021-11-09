@@ -11,7 +11,7 @@ void Init_Girouette(void)
 	// configuration du timer
 	myTimerGirouette = malloc(sizeof(MyTimer_Struct_TypeDef));
 	myTimerGirouette->Timer = TIM2; // On utilise le Timer 2
-	myTimerGirouette->ARR = 1439;
+	myTimerGirouette->ARR = 718;
 	myTimerGirouette->PSC = 1; // valeur par défaut du prescaler (à verifier)
 	
 	// initialisation du timer
