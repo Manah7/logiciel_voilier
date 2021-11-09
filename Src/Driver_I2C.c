@@ -1,6 +1,4 @@
 #include "Driver_I2C.h"
-#define RTC_ADDRESS  0x68 //1101000
-#define IMU_ADDRESS 0x53
 
 void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress) {
 	
