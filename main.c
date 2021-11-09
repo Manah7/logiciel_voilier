@@ -7,6 +7,7 @@
 #include "Driver_Communication.h"
 
 #define CLOCK 72000000
+#define MAX_BORDAGE 105
 
 void test_gpio () {
 	MyGPIO_Struct_TypeDef button;
@@ -176,10 +177,10 @@ void reception(char par){
 }
 
 int angle_to_bordage(int angle) {
-	if (angle > 180) {
-		return (angle-180)*100000/359*20/100000;
+	if (angle > 359) {
+		return (angle-359)*100000/359*MAX_BORDAGE/100000;
 	} else {
-		return (180-angle)*100000/359*20/100000;
+		return (360-angle)*100000/359*MAX_BORDAGE/100000;
 	}
 }
 
@@ -197,11 +198,8 @@ int main () {
 	Regler_Voiles(0);
 	wait();
 
-	
 	while (1) {
 		Send_Message("[DEBUG]\n");
 		Regler_Voiles(angle_to_bordage(Get_Angle()));
-		//wait();
 	}
-	
 }

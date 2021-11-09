@@ -10,7 +10,7 @@ Fonction interne. Ajuste un short pour correspondre à
 une valeur entre 5 et 10 % (entre 1 et 2 ms, cycle 20ms).
 */ 
 int Convert_to_Pc(short v) {
-	return ((v * 100 / 4) + 500);
+	return ((v * 5) + 500);
 }
 
 /*
