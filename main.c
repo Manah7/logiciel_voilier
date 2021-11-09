@@ -177,13 +177,10 @@ void reception(char par){
 
 int angle_to_bordage(int angle) {
 	if (angle > 180) {
-		
-		return (angle-180)*100000/718*20/100000;
+		return (angle-180)*100000/359*20/100000;
 	} else {
-		//TODO..
+		return (180-angle)*100000/359*20/100000;
 	}
-	
-	
 }
 
 int main () {	
