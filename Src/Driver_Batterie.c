@@ -14,7 +14,7 @@ void Init_Batterie(void)
 
 int Get_Valeur_Batterie(void)
 {
-	return getADC1VALUE();
+	return getADC1VALUE() * 13;
 }
 
 int Is_Batterie_Faible(int valeur);
