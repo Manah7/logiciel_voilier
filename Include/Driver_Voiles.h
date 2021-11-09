@@ -17,7 +17,7 @@ Driver pour le réglage des voiles
 /* Initialise le module voiles. Regle les voiles en position 0. */
 void Init_Voiles(void);
 
-/* Réglage des voiles, de 0 à 20 (inclus), 20 étant le plus bordé */
+/* Réglage des voiles, de 0 à 100 (inclus), 100 étant le plus bordé */
 void Regler_Voiles(short r);
 
 #endif 
