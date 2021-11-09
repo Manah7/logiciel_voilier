@@ -12,7 +12,7 @@ void Init_Girouette(void)
 	myTimerGirouette = malloc(sizeof(MyTimer_Struct_TypeDef));
 	myTimerGirouette->Timer = TIM2; // On utilise le Timer 2
 	myTimerGirouette->ARR = 359;
-	myTimerGirouette->PSC = TIM_PSC_PSC; // valeur par défaut du prescaler (à verifier)
+	myTimerGirouette->PSC = 1; // valeur par défaut du prescaler (à verifier)
 	
 	// initialisation du timer
 	MyTimer_Base_Init(myTimerGirouette);
@@ -59,6 +59,7 @@ void Init_Girouette(void)
 	
 	// initialisation de l'interruption lors de la détection du zero
 	// activation de la AFIO clock
+	//RCC->APB1ENR &= ~RCC_APB1ENR_TIM2EN ;
 	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
 	// on configure la pin PA2 comme Alternate Function Input Output
 	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI2_PA;
