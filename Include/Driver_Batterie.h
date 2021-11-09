@@ -2,6 +2,7 @@
 #define BATTERIE_H
 
 #include "Driver_ADC.h"
+#include "Driver_GPIO.h"
 
 /*
 	Driver pour la gestion de la batterie
