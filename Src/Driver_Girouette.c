@@ -26,7 +26,7 @@ void Init_Girouette(void)
 	gpio_2.GPIO = GPIOA;
 	gpio_0.GPIO_Pin = 0;
 	gpio_1.GPIO_Pin = 1;
-	gpio_2.GPIO_Pin = 2;
+	gpio_2.GPIO_Pin = 4;
 	
 	MyGPIO_Init(&gpio_0);
 	MyGPIO_Init(&gpio_1);
@@ -62,18 +62,18 @@ void Init_Girouette(void)
 	//RCC->APB1ENR &= ~RCC_APB1ENR_TIM2EN ;
 	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
 	// on configure la pin PA2 comme Alternate Function Input Output
-	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI2_PA;
+	AFIO->EXTICR[0] |= AFIO_EXTICR2_EXTI4_PA;
 	
 	// interrupt mask register
-	EXTI->IMR |= EXTI_IMR_MR2;
+	EXTI->IMR |= EXTI_IMR_MR4;
 	
 	// rising trigger selection register
-	EXTI->RTSR |= EXTI_RTSR_TR2;
-	EXTI->FTSR &= ~EXTI_FTSR_TR2;
+	EXTI->RTSR |= EXTI_RTSR_TR4;
+	EXTI->FTSR &= ~EXTI_FTSR_TR4;
 	
 	// configuration de l'interruption
-	NVIC_SetPriority(EXTI2_IRQn, 1);
-	NVIC_EnableIRQ(EXTI2_IRQn);
+	NVIC_SetPriority(EXTI4_IRQn, 1);
+	NVIC_EnableIRQ(EXTI4_IRQn);
 }
 
 void Start_Mesure_Girouette(void)
@@ -95,7 +95,7 @@ int Get_Angle(void)
 	return (int) myTimerGirouette->Timer->CNT;
 }
 
-void EXTI2_IRQHandler(void)
+void EXTI4_IRQHandler(void)
 {
 	// reset du flag
 	EXTI->PR |= 1;

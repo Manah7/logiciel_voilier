@@ -12,7 +12,7 @@
 		- 2 PINs sur un Timer (pour A et B)
 			- TIM2_CH1 : PA0 (A)
 			- TIM2_CH2 : PA1 (B)
-		- 1 PIN quelconque (pour I, le zero) ici PA2
+		- 1 PIN quelconque (pour I, le zero) ici PA4
 */
 
 /* Initialisation de la girouette et de l'interruption liée à la détection du zéro */
