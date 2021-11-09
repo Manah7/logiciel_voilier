@@ -438,6 +438,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_I2C.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_Batterie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Batterie.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -492,6 +497,11 @@
               <FileName>Driver_I2C.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_I2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Batterie.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Batterie.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -935,6 +945,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\Driver_I2C.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_Batterie.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\Driver_Batterie.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -989,6 +1004,11 @@
               <FileName>Driver_I2C.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\Driver_I2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Batterie.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\Driver_Batterie.h</FilePath>
             </File>
           </Files>
         </Group>
