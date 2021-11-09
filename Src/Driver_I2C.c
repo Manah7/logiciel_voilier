@@ -30,6 +30,7 @@ void I2C_Init(uint32_t ClockSpeed) {
 }
 
 void I2C_getBytes(char Register_address, char Device_adress, char * tab){
+		int i;
 	//On envoie un start
 	I2C_START(0, Device_adress);
 	//On mets l'adresse du registre dans DR (sans toucher au bits réservés)
@@ -44,7 +45,7 @@ void I2C_getBytes(char Register_address, char Device_adress, char * tab){
 	
 	//On active l'ACK automatique
 	I2C1->CR1 |=  I2C_CR1_ACK;
-	int i;
+
 		for(i=0 ; i<sizeof(tab);i++){
 			//Si c'est le dernier byte on envoie un NACK
 			if(i==sizeof(tab)-1) I2C1->CR2 |=  I2C_CR2_LAST;

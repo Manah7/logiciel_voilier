@@ -3,6 +3,7 @@
 
 #include "stm32f10x.h"
 
-float IMU_getroll(void);
+int IsRoll(void);
+void Initialize_IMU(void);
 
 #endif
