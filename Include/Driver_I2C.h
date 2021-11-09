@@ -3,6 +3,8 @@
 
 #include "stm32f10x.h"
 #include "Driver_GPIO.h"
+#define RTC_ADDRESS  0x68 //1101000
+#define IMU_ADDRESS 0x53
 
 /* Besoin de deux pins : PB6(SCL) et PB7(SDA) */
 

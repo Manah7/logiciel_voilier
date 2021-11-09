@@ -2,6 +2,7 @@
 #define RTC_H
 
 #include "stm32f10x.h"
+#include "Driver_I2C.h"
 
 typedef struct{
     int year;
