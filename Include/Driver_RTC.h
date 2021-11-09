@@ -15,6 +15,6 @@ typedef struct{
 } time;
 
 
-time RTC_gettime (void);
+time gettime (void);
 
 #endif
