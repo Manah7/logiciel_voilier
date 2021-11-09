@@ -1,17 +1,12 @@
 #include "Driver_RTC.h"
+#include <stdlib.h>
 
-uint32_t I2C_getdata(uint32_t Register_address, uint16_t device_address) {
-	I2C_START(0, RTC_ADDRESS);
-	I2C1->DR &= 0xFF00;
-	I2C1->DR |= Register_address;
-	I2C1->CR1 |= I2C_CR1_STOP;
+time gettime(void){
+	time t;
+	char* data = malloc(6);  // on a besoins de 6 octets pour connaitre la date
+	I2C_getBytes(0, RTC_ADDRESS, data);
+	t.second = (data[0] & 0x0F) + 10*((data[0]>>4)&0x7);
+	t.second = (data[0] & 0x0F) + 10*((data[0]>>4)&0x7);
 	
-	I2C_START(1, RTC_ADDRESS);
-	I2C1->CR1 |= I2C_CR1_ACK;
-	char tab[6];
-	for (int i=0;i<6;i++){
-		while((I2C1->SR1 & I2C_SR1_BTF) == 0) {}
-		tab[i]=I2C1->DR;
-	}
-	
+	return t;
 }
