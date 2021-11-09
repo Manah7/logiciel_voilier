@@ -5,7 +5,7 @@ MyGPIO_Struct_TypeDef gpio;
 void Init_Batterie(void)
 {
 	gpio.GPIO = GPIOB;
-	gpio.GPIO_conf = In_Analog;
+	gpio.GPIO_Conf = In_Analog;
 	gpio.GPIO_Pin = 0;
 	MyGPIO_Init(&gpio);
 	
@@ -14,7 +14,7 @@ void Init_Batterie(void)
 
 int Get_Valeur_Batterie(void)
 {
-	return getADC1VALUE() * 13;
+	return getADC1Value() * 13;
 }
 
 int Is_Batterie_Faible(int valeur);
