@@ -175,45 +175,36 @@ void reception(char par){
 	Start_Rotation();
 }
 
+int angle_to_bordage(int angle) {
+	if (angle > 180) {
+		
+		return (angle-180)*100000/718*20/100000;
+	} else {
+		//TODO..
+	}
+	
+	
+}
+
 int main () {	
   RCC->APB2ENR |=(0x01 << 2)|(0x01 << 3)|(0x01 << 4);
 	
 	Init_Plateau();
 	Init_Voiles();
-	
-	Regler_Voiles(10);
-	wait();
-	Regler_Voiles(18);
+	Init_Girouette();
+	Start_Mesure_Girouette();
 	
 	Config_UART(USART3);
 	Init_Message_Receiving(&reception);
 	
-	/*do {
-		Send_Message("[DEBUG]\n");
-		Regler_Voiles(0);
-		wait();
-		Send_Message("[REGLAGE]\n");
-		Regler_Voiles(10);
-		wait();
-		Send_Message("[REGLAGE]\n");
-		Regler_Voiles(20);
-		wait();
-	} while (1);*/
-	
+	Regler_Voiles(0);
+	wait();
+
 	
 	while (1) {
 		Send_Message("[DEBUG]\n");
-		wait();
-		Regler_Voiles(0);
-		wait();
-		Regler_Voiles(18);
+		Regler_Voiles(angle_to_bordage(Get_Angle()));
+		//wait();
 	}
 	
-	//test_gpio();
-	//test_timer();
-	//test_pwm();
-	//test_adc();
-	//test_voiles();
-	//test_girouette();
-	//test_plateau();
 }

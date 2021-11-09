@@ -1,5 +1,6 @@
 #include "Driver_I2C.h"
-#define RTC_ADDRESS 1101000
+#define RTC_ADDRESS  0x68 //1101000
+#define IMU_ADDRESS 0x53
 
 void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress) {
 	
@@ -30,11 +31,11 @@ void I2C_Init(uint32_t ClockSpeed, uint32_t OwnAddress) {
 	
 	I2C1->CR1 |= I2C_CR1_PE;     // Peripheral Enable
 	I2C1->CR2 |= I2C_CR2_FREQ_1;
-  I2C1->CCR |= ClockSpeed;
+  I2C1->CCR |= ClockSpeed;  //100kHz
 	//I2C1->OAR1 |= OwnAddress;
 }
 
-void I2C_START(uint16_t mode) {
+void I2C_START(uint16_t mode, uint16_t device_address) {
 	while((I2C1->SR1 & I2C_SR2_BUSY)!=0x0000) {}
 	I2C1->CR1 |= I2C_CR1_START;
 	while ((I2C1->SR1 & I2C_SR1_SB) != 0x0000){}
@@ -43,3 +44,4 @@ void I2C_START(uint16_t mode) {
 	I2C1->SR1 &= (~I2C_SR1_ADDR); 
 	
 }
+
