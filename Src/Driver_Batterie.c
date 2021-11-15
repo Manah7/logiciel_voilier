@@ -10,11 +10,12 @@ void Init_Batterie(void)
 	MyGPIO_Init(&gpio);
 	
 	configADC1(8);
+	calibrateADC1();
 }
 
-float Get_Valeur_Batterie(void)
+int Get_Valeur_Batterie(void)
 {
-	return ((getADC1Value() * 12)/4095);
+	return ((getADC1Value() * 12000)/4095);
 }
 
 int Is_Batterie_Faible(int valeur)
@@ -23,5 +24,5 @@ int Is_Batterie_Faible(int valeur)
 	// on se retrouve avec des valeurs comprises entre
 	// 0 et 4095 (2^12=4096)
 	// donc on a vBatt = (valADC * 12)/4095
-	return ((getADC1Value() * V_BAT) / VALEUR_MAX_ADC) < 11.0;
+	return ((getADC1Value() * V_BAT * 1000) / VALEUR_MAX_ADC) < 11000;
 }
