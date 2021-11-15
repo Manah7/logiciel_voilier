@@ -19,6 +19,6 @@ void Init_Batterie(void);
 int Get_Valeur_Batterie(void);
 
 /* Retourne si la tension de la batterie est trop faible */
-int Is_Batterie_Faible(int valeur);
+int Is_Batterie_Faible(void);
 
 #endif

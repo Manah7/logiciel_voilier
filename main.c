@@ -13,7 +13,7 @@
 #define MAX_BORDAGE 100
 
 
-// Variable de debug
+// [[debug]] Variable de debug
 int v;
 int t;
 
@@ -48,9 +48,6 @@ void envoyer_allure(int angle) {
 	} else {
 		Send_Message("Je suis VENT ARRIERE !\n");
 	}
-	if (IsCapsizing()){
-		Send_Message("AAAAAAAAAAAAAAAAAAAH!!!!\n");
-	}
 }
 
 // Point d'entrée
@@ -71,12 +68,27 @@ int main () {
 	Init_Message_Receiving(&reception);
 
 	while (1) {
+		// Réglage des voiles en fonction de l'allure
 		angle = Get_Angle();
 		envoyer_allure(angle);
 		Regler_Voiles(angle_to_bordage(angle));
 		
+		// [[debug]]
 		//t = gettime().second;
 		
+		// [[debug]] 
 		v = Get_Valeur_Batterie();
+		
+		// Verification de la tension batterie
+		if (Is_Batterie_Faible()) {
+			Send_Message("Batterie faible !\n");
+		}
+		
+		// [[deprecated]] Vérification de l'inclinaison
+		/*
+		if (IsCapsizing()){
+			Send_Message("AAAAAAAAAAAAAAAAAAAH!!!!\n");
+		}
+		*/
 	}
 }

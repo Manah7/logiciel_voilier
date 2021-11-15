@@ -23,10 +23,10 @@ void I2C_Init(uint32_t ClockSpeed) {
 	
 	MyGPIO_Init(&GPIO_SCL);
 	MyGPIO_Init(&GPIO_SDA);
-	
+	I2C1->CCR &= ~(0x1 << 15);
 	I2C1->CR1 |= I2C_CR1_PE;     // Peripheral Enable
-	I2C1->CR2 |= I2C_CR2_FREQ_1;
-  I2C1->CCR |= ClockSpeed;  //100kHz
+	I2C1->CR2 |= 36;
+  I2C1->CCR |= 270;  //100kHz
 }
 
 void I2C_getBytes(char Register_address, char Device_adress, char * tab){
