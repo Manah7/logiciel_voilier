@@ -48,6 +48,9 @@ void envoyer_allure(int angle) {
 	} else {
 		Send_Message("Je suis VENT ARRIERE !\n");
 	}
+	if (IsCapsizing()){
+		Send_Message("AAAAAAAAAAAAAAAAAAAH!!!!\n");
+	}
 }
 
 // Point d'entrée
@@ -61,7 +64,7 @@ int main () {
 	Init_Girouette();
 	Init_Batterie();
 	Start_Mesure_Girouette();
-	//Initialize_IMU();
+	Initialize_IMU();
 	
 	// Lancement de la communication USART
 	Config_UART(USART3);
