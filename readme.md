@@ -1,7 +1,6 @@
-<br />
 <p align="center">
   <p align="center">
-    <h2 align="center">Projet voilier</h2>
+    <h1 align="center">Projet voilier</h1>
     <br />
     <a href="https://github.com/Manah7/Voilier/commits/main"><strong>Voir les versions »</strong></a>
     <br />
@@ -10,7 +9,7 @@
     ·
     <a href="https://github.com/Manah7/Voilier">Voir le projet</a>
   </p>
-</p>
+
 # Documentation
 Répertoire de travail pour le projet voilier de 4 IR. Ce répertoire est privé. Le code produit est sous licence GNU GPL 3. Vous trouverez ci-après une synthèse des implémentations.
 
