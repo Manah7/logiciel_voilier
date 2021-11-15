@@ -1,6 +1,6 @@
 #include "Driver_I2C.h"
 
-void I2C_Init(uint32_t ClockSpeed) {
+void I2C_Init() {
 	
 	// Déclaration GPIO
 	MyGPIO_Struct_TypeDef GPIO_SCL;
@@ -29,17 +29,17 @@ void I2C_Init(uint32_t ClockSpeed) {
   I2C1->CCR |= 270;  //100kHz
 }
 
-void I2C_getBytes(char Register_address, char Device_adress, char * tab){
+void I2C_getBytes(char Register_address, char Device_address, char * tab){
 		int i;
 	//On envoie un start
-	I2C_START(0, Device_adress);
+	I2C_START(0, Device_address);
 	//On mets l'adresse du registre dans DR (sans toucher au bits réservés)
 	I2C1->DR = (I2C1->DR & 0xFF00) | (0xFF & Register_address);
 	//On attend un ack
 	while ((I2C1->SR1 & I2C_SR1_ADDR) == 0x0000) {}
 	//On fait un stop puis un start en lecture
 	I2C1->CR1 |= I2C_CR1_STOP;
-	I2C_START(1, Device_adress);
+	I2C_START(1, Device_address);
 	//On attend l'ACK
 	while ((I2C1->SR1 & I2C_SR1_ADDR) == 0x0000) {}
 	

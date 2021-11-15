@@ -4,11 +4,10 @@
 
 int IsCapsizing(){	
 	char valeurs[6];
-	int x,y,z;
+	int y,z;
 	double ratio;
 
 	I2C_getBytes(0x32,IMU_ADDRESS,valeurs);
-	x= valeurs[0] | (valeurs[1]<<8);
 	y= valeurs[2] | (valeurs[3]<<8);
 	z= valeurs[4] | (valeurs[5]<<8);
 	
@@ -20,5 +19,5 @@ int IsCapsizing(){
 
 
 void Initialize_IMU(){
-	I2C_Init(100000);
+	I2C_Init();
 }
