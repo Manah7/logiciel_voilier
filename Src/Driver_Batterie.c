@@ -9,6 +9,9 @@ void Init_Batterie(void)
 	gpio.GPIO_Pin = 0;
 	MyGPIO_Init(&gpio);
 	
+	// continuous mode
+	ADC1->CR2 |= ADC_CR2_CONT;
+	
 	configADC1(8);
 	calibrateADC1();
 }
