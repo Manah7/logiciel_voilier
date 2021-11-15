@@ -9,16 +9,17 @@
 
 /*
 	Driver pour la gestion de la batterie
-	Utilise les memes PINs que le driver de l'ADC
+	PINs utilisées :
+	- 1 PIN d'entrée pour l'ADC : PB0
 */
 
 /* Initialise le driver */
 void Init_Batterie(void);
 
-/* Retourne le pourcentage de batterie restant */
+/* Retourne la valeur de tension renvoyée par la batterie */
 int Get_Valeur_Batterie(void);
 
-/* Retourne si la tension de la batterie est trop faible */
+/* Indique si la tension de la batterie est trop faible (< 11V)*/
 int Is_Batterie_Faible(void);
 
 #endif

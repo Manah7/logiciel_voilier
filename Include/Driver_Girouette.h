@@ -12,7 +12,7 @@
 		- 2 PINs sur un Timer (pour A et B)
 			- TIM2_CH1 : PA0 (A)
 			- TIM2_CH2 : PA1 (B)
-		- 1 PIN quelconque (pour I, le zero) ici PA4
+			- 1 PIN quelconque : PA4 (pour I, le zero)
 */
 
 /* Initialisation de la girouette et de l'interruption liée à la détection du zéro */
@@ -27,7 +27,7 @@ void Stop_Mesure_Girouette(void);
 /* Retourne la valeur de l'angle de la girouette */
 int Get_Angle(void);
 
-/* handler d'interruption de remise à zéro */
+/* Handler d'interruption de remise à zéro */
 void EXTI2_IRQHandler(void);
 
 #endif
