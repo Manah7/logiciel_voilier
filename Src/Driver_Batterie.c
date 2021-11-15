@@ -12,9 +12,9 @@ void Init_Batterie(void)
 	configADC1(8);
 }
 
-float Get_Valeur_Batterie(void)
+int Get_Valeur_Batterie(void)
 {
-	return ((getADC1Value() * 12)/4095);
+	return ((getADC1Value() * 12000)/4095);
 }
 
 int Is_Batterie_Faible(int valeur)

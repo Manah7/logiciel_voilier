@@ -16,7 +16,7 @@
 void Init_Batterie(void);
 
 /* Retourne le pourcentage de batterie restant */
-float Get_Valeur_Batterie(void);
+int Get_Valeur_Batterie(void);
 
 /* Retourne si la tension de la batterie est trop faible */
 int Is_Batterie_Faible(int valeur);
