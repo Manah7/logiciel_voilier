@@ -24,5 +24,9 @@ int Is_Batterie_Faible(int valeur)
 	// on se retrouve avec des valeurs comprises entre
 	// 0 et 4095 (2^12=4096)
 	// donc on a vBatt = (valADC * 12)/4095
+<<<<<<< HEAD
 	return ((getADC1Value() * V_BAT * 1000) / VALEUR_MAX_ADC) < 11000;
+=======
+	return ((getADC1Value() * V_BAT) / VALEUR_MAX_ADC) < 11.0;
+>>>>>>> 3ee547e6dda9091adf1858d95fd776f3e031e158
 }
