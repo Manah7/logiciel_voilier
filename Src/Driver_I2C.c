@@ -88,9 +88,8 @@ void I2C_START(uint16_t mode, uint16_t device_address) {
 	while((I2C1->SR1 & I2C_SR2_BUSY)!=0x0000) {} //Bus libre?
 	I2C1->CR1 |= I2C_CR1_START; //Génération bit start
 	while ((I2C1->SR1 & I2C_SR1_SB) != 0x0000){} //bit start bien passé?
-	I2C1->DR |= (RTC_ADDRESS <<1) | mode;  //On met l'adresse dans la mémoire et on ajoute 1 a droite pour se placer en mode lecture 
+	I2C1->DR |= (device_address <<1) | mode;  //On met l'adresse dans la mémoire et on ajoute 1 a droite pour se placer en mode lecture 
 	while ((I2C1->SR1 & I2C_SR1_ADDR) == 0x0000) {} //Attente ACK
 	I2C1->SR1 &= (~I2C_SR1_ADDR); //Fin de l'adressage 
 	
 }
-

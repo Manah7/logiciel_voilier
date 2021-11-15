@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 
-int IsRoll(void);
+int IsCapsizing(void);
 void Initialize_IMU(void);
 
 #endif
