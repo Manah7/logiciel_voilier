@@ -9,16 +9,13 @@ void Init_Batterie(void)
 	gpio.GPIO_Pin = 0;
 	MyGPIO_Init(&gpio);
 	
-	// continuous mode
-	ADC1->CR2 |= ADC_CR2_CONT;
-	
 	configADC1(8);
 	calibrateADC1();
 }
 
 int Get_Valeur_Batterie(void)
 {
-	return ((getADC1Value() * 12000)/4095);
+	return ((getADC1Value() * V_BAT * 1000) / VALEUR_MAX_ADC);
 }
 
 int Is_Batterie_Faible(int valeur)
