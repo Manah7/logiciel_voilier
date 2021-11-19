@@ -28,15 +28,15 @@ La fonction est implémentée avec un bordage linéaire à l'orientation du vent
 Le voiler est orientable à partir de la télécommande, proportionnellement à la commande utilisateur.
 
 #### Système anti-chavirement et transmission de l'heure
-Le système est implémenté, mais l'I2C présente des problème de configuration. La configuration actuelle suit la documentation technique mais la fréquence n'est pas valide. Nous avons fait de nombreuses recherches sur le sujet sans succès.
+Le système est implémenté, mais l'I2C présente des problème de configuration. La configuration actuelle suit la documentation technique, mais la fréquence n'est pas valide. Nous avons fait de nombreuses recherches sur le sujet sans succès.
 
-Hormis le problème de configuration, l'ensemble des fonction anti-chavirement et de la RTC sont opérationnellles.
+Hormis le problème de configuration, l'ensemble des fonction anti-chavirement et de la RTC sont opérationnelles.
 
 #### Transmission de l'information
 La communication avec la télécommande est bidirectionnelle et est pleinement utilisée par les autres composants. 
 
-## Partiques de codages et méthodologie
-Le projet est géré par Git et hébergé sur GitHub.
+## Pratiques de codages et méthodologie
+Le projet est géré par Git et hébergé sur GitHub. L'ensemble de  l'historique des commits sont disponibles sur GitHub.
 
 ## Contact
 Pour plus d'information, merci de contacter les étudiants du projet.
